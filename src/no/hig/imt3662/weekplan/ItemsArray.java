@@ -17,5 +17,7 @@ public class ItemsArray extends JSONArray {
 		JSONArray items = new JSONArray();
 		items.put(item1);
 		items.put(item2);
+		
+		 = (ItemsArray) items;
 	}
 }
