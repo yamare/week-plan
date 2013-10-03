@@ -18,6 +18,6 @@ public class ItemsArray extends JSONArray {
 		items.put(item1);
 		items.put(item2);
 		
-		 = (ItemsArray) items;
+		// = (ItemsArray) items;
 	}
 }
