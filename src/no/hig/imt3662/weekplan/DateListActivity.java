@@ -24,6 +24,7 @@ public class DateListActivity extends ExpandableListActivity implements SensorEv
 
 	private SensorManager mSensorManager;
 	private Sensor aSensor;
+	private Sensor mSensor;
 	float[] accelerometerValues = new float[3];   // values for accelerometer
     float[] magneticFieldValues = new float[3];    // values for magnetic
 	
@@ -138,7 +139,7 @@ public class DateListActivity extends ExpandableListActivity implements SensorEv
             }
             
             
-        	// Provided as a necessity to implement the sensors. The function itself has no real purpose
+        	// Provided as a necessity to implement the sensors. The function itself has no real purpose in our software
 			@Override
 			public void onAccuracyChanged(Sensor sensor, int accuracy) {
 				// Nothing
@@ -149,7 +150,8 @@ public class DateListActivity extends ExpandableListActivity implements SensorEv
 	
 	// Starts the sensor when the program is activated
 	public void onResume() {
-        mSensorManager.registerListener(this, aSensor, SensorManager.SENSOR_DELAY_NORMAL);  
+		mSensorManager.registerListener(this, aSensor, SensorManager.SENSOR_DELAY_NORMAL);  
+        mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);  
     }
 	
 	// Detatches the sensor when the program is paused to conserve battery
